@@ -49,7 +49,7 @@
 
 // Static Method:
 class Person {
-  static species() {
+  static get species() {
     console.log("Homo sapiens");
   }
 
@@ -60,10 +60,10 @@ class Person {
     this.code = 34563;
   }
 
-  getFirstName(firstName) {
+  setFirstName(firstName) {
     this.firstName = firstName;
   }
-  getLastName(lastName) {
+  setLastName(lastName) {
     this.lastName = lastName;
   }
   fullName() {
@@ -71,6 +71,12 @@ class Person {
   }
   getCode() {
     console.log(this.code);
+  }
+
+  set setFullName(name) {
+    name = name.split(" ");
+    this.setFirstName(name[0]);
+    this.setLastName(name[0]);
   }
 }
 
@@ -83,9 +89,20 @@ class Employee extends Person {
 
     this.code = 1007;
   }
+
+  // Get method:
+  get biography() {
+    const bio = `This is ${this.fullName()} and the code is ${
+      this.code
+    }.`.toUpperCase();
+    return console.log(bio);
+  }
 }
 
 const emp1 = new Employee("rafee", "yeasin");
 
 emp1.fullName();
 emp1.getCode();
+// emp1.biography;
+
+// Employee.species;
