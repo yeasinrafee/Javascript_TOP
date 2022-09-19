@@ -75,3 +75,17 @@ class Person {
 }
 
 const rafee = new Person("Yeasin", "Rafee");
+
+// Extends and Super keyword:
+class Employee extends Person {
+  constructor(firstName, lastName) {
+    super(firstName, lastName);
+
+    this.code = 1007;
+  }
+}
+
+const emp1 = new Employee("rafee", "yeasin");
+
+emp1.fullName();
+emp1.getCode();
