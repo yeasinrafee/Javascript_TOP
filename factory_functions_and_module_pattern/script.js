@@ -50,5 +50,13 @@ const Nerd = (name) => {
 
 const raf = Nerd("Rafee");
 
-raf.sayName();
-raf.doSomethingNerdy();
+// raf.sayName();
+// raf.doSomethingNerdy();
+
+const takeName = (name) => {
+  const sayMyName = () => console.log(`My name is ${name}`);
+  return { sayMyName };
+};
+
+const rafeee = takeName("Rafee");
+rafeee.sayMyName();
